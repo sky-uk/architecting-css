@@ -1,0 +1,38 @@
+// =============================
+// EM Unit Calculation Function
+// =============================
+
+///
+/// Calculate a EM value using the formula: target / context.
+/// Your context is the font-size of the parent element.
+/// If you set the value on a textual element, your context is the element font-size.
+///
+/// @group origin
+/// @name calc-em
+///
+/// @param {number} $values                    - The value (in pixels) of the elements property you are setting the EM value for.
+/// @param {number} $context [$base-font-size] - The value (in pixels) of the parent elements property.
+///
+/// @return {list} The EM value/s of the pixel based value/s you provided as your first parameter.
+///
+/// @example scss - Single Target Parameter
+///   margin-right: calc-em(20, 16);
+/// @example scss - Multiple Target Parameters
+///   margin: calc-em(20 20 10, 16);
+///
+
+@function calc-em($values, $context: $base-font-size) {
+  $em: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $em: append($em, $value);
+    }
+    @else {
+      $val: $value;
+      $em: append($em, ($val / $context * 1em));
+    }
+  }
+
+  @return $em;
+}

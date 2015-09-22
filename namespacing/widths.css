@@ -1,0 +1,112 @@
+[class~="u-1-of-12"] {
+  width: 8.33333% !important;
+}
+[class~="u-2-of-12"] {
+  width: 16.66667% !important;
+}
+[class~="u-3-of-12"] {
+  width: 25% !important;
+}
+[class~="u-4-of-12"] {
+  width: 33.33333% !important;
+}
+[class~="u-5-of-12"] {
+  width: 41.66667% !important;
+}
+[class~="u-6-of-12"] {
+  width: 50% !important;
+}
+[class~="u-7-of-12"] {
+  width: 58.33333% !important;
+}
+[class~="u-8-of-12"] {
+  width: 66.66667% !important;
+}
+[class~="u-9-of-12"] {
+  width: 75% !important;
+}
+[class~="u-10-of-12"] {
+  width: 83.33333% !important;
+}
+[class~="u-11-of-12"] {
+  width: 91.66667% !important;
+}
+[class~="u-12-of-12"] {
+  width: 100% !important;
+}
+
+@media all and (min-width: 64.0625em) and (max-width: 187.5em) {  [class~="u-1-of-12@desk"] {
+    width: 8.33333% !important;
+  }
+  [class~="u-2-of-12@desk"] {
+    width: 16.66667% !important;
+  }
+  [class~="u-3-of-12@desk"] {
+    width: 25% !important;
+  }
+  [class~="u-4-of-12@desk"] {
+    width: 33.33333% !important;
+  }
+  [class~="u-5-of-12@desk"] {
+    width: 41.66667% !important;
+  }
+  [class~="u-6-of-12@desk"] {
+    width: 50% !important;
+  }
+  [class~="u-7-of-12@desk"] {
+    width: 58.33333% !important;
+  }
+  [class~="u-8-of-12@desk"] {
+    width: 66.66667% !important;
+  }
+  [class~="u-9-of-12@desk"] {
+    width: 75% !important;
+  }
+  [class~="u-10-of-12@desk"] {
+    width: 83.33333% !important;
+  }
+  [class~="u-11-of-12@desk"] {
+    width: 91.66667% !important;
+  }
+  [class~="u-12-of-12@desk"] {
+    width: 100% !important;
+  }
+}
+@media all and (min-width: 40.0625em) and (max-width: 64em) {  [class~="u-1-of-8@lap"] {
+    width: 12.5% !important;
+  }
+  [class~="u-2-of-8@lap"] {
+    width: 25% !important;
+  }
+  [class~="u-3-of-8@lap"] {
+    width: 37.5% !important;
+  }
+  [class~="u-4-of-8@lap"] {
+    width: 50% !important;
+  }
+  [class~="u-5-of-8@lap"] {
+    width: 62.5% !important;
+  }
+  [class~="u-6-of-8@lap"] {
+    width: 75% !important;
+  }
+  [class~="u-7-of-8@lap"] {
+    width: 87.5% !important;
+  }
+  [class~="u-8-of-8@lap"] {
+    width: 100% !important;
+  }
+}
+@media all and (min-width: 20em) and (max-width: 40em) {  [class~="u-1-of-4@palm"] {
+    width: 25% !important;
+  }
+  [class~="u-2-of-4@palm"] {
+    width: 50% !important;
+  }
+  [class~="u-3-of-4@palm"] {
+    width: 75% !important;
+  }
+  [class~="u-4-of-4@palm"] {
+    width: 100% !important;
+  }
+}

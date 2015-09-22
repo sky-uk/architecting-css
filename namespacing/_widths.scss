@@ -1,0 +1,21 @@
+// =============================
+// Width Utility Helper Attributes
+// =============================
+
+//
+// Width Utility Helper Attributes are generated via the below mixin to create attributes for certain viewports.
+// The advantage to this, is it allows widths to be generated from the attributes added to a certain element.
+// Example Use: class="4-of-12 6-of-8@lap 4-of-4@palm".
+//
+// Note - Global Classes are also generated and are to be used when an elements spacing is consistent across all viewports.
+//
+
+@include generate-percentages();
+
+// Namespaced Classes Based On Viewport.
+@each $namespace, $viewport-map in $viewport-values {
+  @include media-query($from: nth($viewport-map, 1),
+                       $to  : nth($viewport-map, 2)) {
+    @include generate-percentages($columns: nth($viewport-map, 3), $namespace: $namespace);
+  }
+}

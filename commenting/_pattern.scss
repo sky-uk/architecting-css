@@ -1,0 +1,54 @@
+// =============================
+// Media Pattern Styling
+// =============================
+
+//
+// Origin Media Pattern will display two content elements side by side.
+// Find more information regarding this pattern here
+// http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+// Note - This pattern usually consists of an image and textual content, but isn't restricted.
+//
+// Media Pattern Default.
+// Note - Reversed Version is the diagram below but the elements are in opposite positions.
+//
+//    Media Sidebar             Media Body
+//
+//    ~ ~ ~ ~ ~ ~ ~    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//    ~           ~    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//    ~           ~    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//    ~           ~    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//    ~ ~ ~ ~ ~ ~ ~    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//
+
+.media {
+  @extend %u-clearfix;
+
+  // .media__body
+
+  &__body {
+    overflow: hidden;
+  }
+
+  //.media__sidebar
+
+  &__sidebar {
+    float: left;
+  }
+
+  // .media__sidebar--rev
+
+  &__sidebar--rev {
+    float: right;
+  }
+
+  &__sidebar img,
+  &__sidebar--rev img {
+    display: block;
+  }
+
+  &__body,
+  &__body > :last-child {
+    margin-bottom: 0;
+  }
+
+}

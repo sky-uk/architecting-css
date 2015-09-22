@@ -1,0 +1,21 @@
+// =============================
+// Origin Percentage Calculation Utility Function
+// =============================
+
+///
+/// Calculate a percentage value using the formula: target / context.
+///
+/// @group origin
+/// @name calc-percent
+///
+/// @param {number} $target  - The value (in pixels) of the elements property you are setting the percentage for.
+/// @param {number} $context - The value (in pixels) of the parent elements property.
+///
+/// @example scss
+///
+/// width: calc-percent(300, 960);
+///
+
+@function calc-percent($target, $context) {
+  @return ($target / $context) * 100%;
+}

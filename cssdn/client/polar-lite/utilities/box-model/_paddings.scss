@@ -1,0 +1,40 @@
+// =============================
+// Client/Polar-Lite Padding Utility Helper Classes
+// =============================
+
+//
+// Un-namespaced Classes are to be used globally when an elements spacing is consistant across all viewports.
+// Example Use - class="pad-r-2x".
+//
+
+@include generate-spacing-batch();
+
+// =============================
+// Client/Polar-Lite Viewport Padding Utility Helper Attributes
+// =============================
+
+//
+// Core Viewport Padding Utility Helper Attributes are generated via the below mixin to create attributes for certain viewports.
+// The advantage to this, is it allows padding to be added to a certain element specifically for a breakpoint which you have defined.
+// Example Use - class="pad-r-2x@desk pad-r-0@palm".
+//
+
+//
+// Attribute Name Key
+// -t- = Top
+// -b- = Bottom
+// -l- = Left
+// -r- = Right
+// -e- = Ends  (Top & Bottom)
+// -s- = Sides (Left & Right)
+//
+
+@each $viewport, $viewport-val in $viewport-values {
+
+	// Attributes only apply once certain breakpoint is triggered.
+
+	@include media-query($to: nth($viewport-val, 2)) {
+		@include generate-spacing-batch($namespace: $viewport);
+	}
+
+}

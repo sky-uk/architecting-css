@@ -1,0 +1,30 @@
+// =============================
+// Help Settings Partial Imports
+// =============================
+
+// Origin Settings
+@import "origin/settings";
+
+// Edge Setting Imports
+@import "edge/polar-lite/settings";   // Polar Lite
+
+// Edge Setting Imports
+@import "client/polar-lite/settings";   // Polar Lite
+
+// =============================
+// Help Origin Layer Imports
+// =============================
+
+@import "origin/origin";
+
+// =============================
+// Help Edge Layer Imports
+// =============================
+
+@import "edge/polar-lite/polar-lite";   // Polar Lite
+
+// =============================
+// Help Client Layer Imports
+// =============================
+
+@import "client/polar-lite/polar-lite"; // Polar Lite

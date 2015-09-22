@@ -1,0 +1,16 @@
+// =============================
+// Enable Private Variables
+// =============================
+
+$_valign-enable: true !default;
+
+// =============================
+// Origin Vertical Align Utility Helper Classes
+// =============================
+
+.u-valign,
+%u-valign {
+	position:  relative         !important;
+  top:       50%              !important;
+  transform: translateY(-50%) !important;
+}

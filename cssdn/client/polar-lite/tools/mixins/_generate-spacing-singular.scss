@@ -1,0 +1,38 @@
+// =============================
+// Client/Polar-Lite Generate Spacing Single Mixin
+// =============================
+
+///
+/// A singular instance of spacing properties. Can be used in individual classes to
+/// generate the calculated properties.
+/// Parameter Description:
+///
+/// @param {string} $property ['padding'] - A String of the CSS property that you would like to target.
+/// @param {string} $units ['1x']         - A String of a unit that you would to output.
+/// @param {map} $directions [false]      - A Map of directions that you would like to output ("top", "right", "bottom", "left").
+///
+/// @example scss - Generate Margin 1/2 Utilities For Just Top and Bottom.
+///   @include generate-spacing-single("margin", "1/2", (top, bottom));
+///
+
+@mixin generate-spacing-single($property: 'padding', $unit: "1x", $directions: false) {
+  $operator: str-slice($unit, 2, 2);
+
+  @if map-count($directions) > 0 {
+    @each $position in $directions {
+      @if $operator == 'x' {
+        $amount: str-slice($unit, 1, 1);
+        @include rem-sizing($base-spacing-unit * to-number($amount), #{$property}-#{$position});
+      } @else if $operator == '/' {
+        $amount: str-slice($unit, -1, -1);
+        @include rem-sizing($base-spacing-unit / to-number($amount), #{$property}-#{$position});
+      } @else {
+        $amount: str-slice($unit, 1, 1);
+        #{$property}-#{$position}: to-number($amount);
+      }
+    }
+  } @else {
+    $amount: str-slice($unit, 1, 1);
+    @include rem-sizing($base-spacing-unit * to-number(amount), #{$property});
+  }
+}

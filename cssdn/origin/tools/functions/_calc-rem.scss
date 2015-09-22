@@ -1,0 +1,38 @@
+// =============================
+// Origin REM Unit Calculation Function
+// =============================
+
+///
+/// Calculate a REM value using the formula: target / context.
+/// Your context is the font-size of the root element.
+/// Note - This is required for rem-sizing mixin.
+///
+/// @group origin
+/// @name calc-rem
+///
+/// @param {number} $values                    - The value/s (in pixels) of the elements property you are setting the REM value for.
+/// @param {number} $context [$base-font-size] - The value (in pixels) of the root elements font-size.
+///
+/// @return {list} The REM value/s of the pixel based value/s you provided as your first parameter.
+///
+/// @example scss - Single Target Parameter
+///   margin-right: calc-rem(20, 16);
+/// @example scss - Multiple Target Parameters
+///   margin: calc-rem(20 20 10, 16);
+///
+
+@function calc-rem($values, $context: $base-font-size) {
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $rem: append($rem, $value);
+    }
+    @else {
+      $val: $value;
+      $rem: append($rem, ($val / $context + rem));
+    }
+  }
+
+  @return $rem;
+}

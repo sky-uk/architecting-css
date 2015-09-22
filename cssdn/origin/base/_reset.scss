@@ -1,0 +1,41 @@
+// =============================
+// Origin Base Reset Styling
+// =============================
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+  margin:  0;
+  padding: 0;
+}
+
+//
+// If Global Box Sizing Boolean is set to true, add box-sizing to all elements.
+// Note - For alternative approach, view grids partial.
+//
+
+@if $global-box-sizing == true {
+  * {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+  }
+}
+
+//
+// 1. Force scrollbars to always be visible to prevent awkward `jumps` when
+//    navigating between pages that do/do not have enough content to produce
+//    scrollbars naturally.
+// 2. Ensure the page always fills at least the entire height of the viewport.
+//
+
+html {
+  overflow-y: scroll;                   // 1
+  min-height: 100%;                     // 2
+}

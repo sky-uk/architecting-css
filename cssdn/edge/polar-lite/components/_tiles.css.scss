@@ -1,0 +1,146 @@
+// =============================
+// Edge/Polar-Lite Polar Tile Component Styling
+// =============================
+
+//
+// The Polar Tile Component is a component which was identified at the very
+// beginning as a key element in Polaris.
+// It is a squared element which contains one or more container elements which make up
+// the required height.
+//
+
+.polar-tile,
+%polar-tile {
+  position: relative;
+  padding:  calc-em(5, $base-font-size);
+
+  //
+  // The Polar-Tile Alpha Modifier extends upon the base component and is focused towards
+  // a mix of media and text based content which makes up the container elements.
+  // Example Use - Trial Homepage Tile Elements.
+  //
+
+  // .polar-tile--alpha
+  &--alpha {
+    @extend %polar-tile;
+    margin-bottom: calc-em(30, $base-font-size);
+
+    // .polar-tile--alpha__media
+    &__media {
+      display: block;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+      }
+
+    }
+
+    // .polar-tile--alpha__media-image
+    &__media-image {
+      max-width: 100%;
+      width: auto;
+    }
+
+    // .polar-tile--alpha__content
+    &__content {
+      padding: calc-em(20, $base-font-size) calc-em(25, $base-font-size);
+    }
+
+  }
+
+}
+
+// =============================
+// Edge/Polar-Lite Polar Tile Container & Slot Styling
+// =============================
+
+//
+// To create a responsive square for the tile elements, the height and width
+// need to be the same as well as be adaptive.
+// Polar Tile Containers add padding-bottom of a certain percentage to their :after pseudo element
+// based on the number of elements contained within the tile, in order to maintain a 1:1 ratio.
+//
+
+[class*="polar-tile__container"] {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+//
+// Percentages for these containers are generated based on the below mixin.
+// Note - The amount of containers created are based on the $tile-ratio variable.
+// This variable defines the maximum number of containers which should exist in a single
+// container at one time.
+//
+
+@include tile-container-generator();
+
+//
+// Generate viewport namespaced values for the purposes of removing and adjusting tile sizes
+// across certain breakpoints in the UI.
+//
+
+@each $namespace, $viewport-map in $viewport-values {
+  @include media-query($from: nth($viewport-map, 1),
+                       $to  : nth($viewport-map, 2)) {
+    @include tile-container-generator($namespace: $namespace);
+  }
+}
+
+.polar-tile__slot,
+.polar-tile__overlay,
+%polar-tile__overlay {
+  position: absolute;
+}
+
+//
+// All content contained within a container should be within a slot element.
+// Due to the padding-bottom being set by the container, the slot positions the content
+// correctly in order not to be pushed down the tile by the padding.
+//
+
+.polar-tile__slot {
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+// =============================
+// Edge/Polar-Lite Polar Tile Overlay Styling
+// =============================
+
+//
+// Some of the Polar Tile Elements contain overlays which are visible upon hover.
+// Example Use - Trial Homepage Tile Elements.
+//
+
+.polar-tile__overlay,
+%polar-tile__overlay {
+  opacity: 0;
+  transform: translateZ(0);
+  transition: opacity .6s ease;
+  padding: calc-em(20, $base-font-size) calc-em(25, $base-font-size);
+  will-change: opacity;
+
+  //
+  // The Polar Tile Full modifier means the overlay takes up the full width and height of
+  // the tile container.
+  //
+
+  // .polar-tile__overlay--full
+  &--full {
+    @extend %polar-tile__overlay;
+    left: 0; right: 0;
+    top: 0;  bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,37 @@
+// =============================
+// Origin Generate Percentages Utility Mixin
+// =============================
+
+///
+/// Generates utility classes for percentage based properties.
+///
+/// @group origin
+/// @name generate-percentages
+///
+/// @param {number} $columns [12]       - Number of columns within the grid for the specific namespaced viewport.
+/// @param {string} $property ['width'] - The property which you want to apply the percentage based value too.
+/// @param {string} $prefix [null]      - Prefix value to apply to the generated classname.
+/// @param {string} $namespace [null]   - Namespace value to apply to the generated classname.
+///
+/// @example scss - Generate Pull Utility Values
+///   @include generate-percentages($property: 'right', $prefix: 'pull');
+/// @example scss - Generate Width Utility Values
+///   @include generate-percentages();
+///
+
+@mixin generate-percentages($columns  : 12,
+                            $property : 'width',
+                            $prefix   : null,
+                            $namespace: null)   {
+  $_prefix: $prefix;
+
+  @if ($_prefix) { $_prefix: '#{$prefix}-' };
+
+  @each $denominator in $columns {
+    @for $numerator from 1 through $denominator {
+      [class~="u-#{$_prefix}#{$numerator}-of-#{$denominator}#{$namespace}"] {
+        #{$property}: ($numerator / $denominator) * 100% !important;
+      }
+    }
+  }
+}

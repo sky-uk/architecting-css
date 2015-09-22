@@ -1,0 +1,76 @@
+// =============================
+// Origin Visibility State Utility Helper Classes
+// =============================
+
+// Un-namespaced Classes are to be used globally when an elements visibility is consistant across all viewports.
+
+.u-is-hidden,
+%u-is-hidden {
+    display: none      !important;
+    visibility: hidden !important;
+}
+
+//
+// Accessibly hide content:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+//
+
+.u-is-hidden-visually,
+%u-is-hidden-visually {
+    position: absolute             !important;
+    overflow: hidden               !important;
+    width: 1px                     !important;
+    height: 1px                    !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.u-is-visible,
+%u-is-visible {
+    display: block      !important;
+    visibility: visible !important;
+    position: static    !important;
+    width: auto         !important;
+    height: auto        !important;
+}
+
+// =============================
+// Origin Visibility State Utility Helper Attributes
+// =============================
+
+@each $viewport, $breakpoint in $viewport-values {
+
+  // Attributes only apply once certain breakpoint is triggered.
+
+  @include media-query($from: nth($breakpoint, 1),
+                       $to:   nth($breakpoint, 2)) {
+
+    //
+  	// Is Hidden Utility Helper Attribute removes elements completely from document, making them not
+  	// visible to screen readers.
+    // Example Use - class="u-is-hidden@lap".
+    //
+
+  	[class~="u-is-hidden#{$viewport}"] {
+  	    display: none      !important;
+  	    visibility: hidden !important;
+  	}
+
+  	[class~="u-is-hidden-visually#{$viewport}"] {
+  	    position: absolute             !important;
+  	    overflow: hidden               !important;
+  	    width: 1px                     !important;
+  	    height: 1px                    !important;
+  	    clip: rect(1px, 1px, 1px, 1px) !important;
+  	}
+
+    [class~="u-is-visible#{$viewport}"] {
+        display: block      !important;
+        visibility: visible !important;
+        position: static    !important;
+        width: auto         !important;
+        height: auto        !important;
+    }
+
+  }
+
+}

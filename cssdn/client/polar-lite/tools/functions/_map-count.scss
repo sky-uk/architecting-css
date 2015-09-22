@@ -1,0 +1,26 @@
+// =============================
+// Core Map Count Function
+// =============================
+
+///
+/// Counts the number of items within a given map.
+///
+/// Parameter Description:
+///
+/// @param {map} $map - A list of values which the function counts upon.
+///
+/// Example Use:
+///
+/// map-count((1, 9, 4))          // returns 3
+/// map-count((1, 2, 3, 4, 5, 6)) // returns 6
+///
+
+@function map-count($map) {
+  $count: 0;
+
+  @each $item in $map {
+      $count: $count + 1;
+  }
+
+  @return $count;
+}

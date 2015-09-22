@@ -1,0 +1,53 @@
+// =============================
+// Origin Grid Element Styling
+// =============================
+
+//
+// Origin Grid Element creates an instance of a grid element which can store grid items within.
+// Note - When using a grid element, please put child content within grid item elements to resolve letter-spacing issue,
+// letter spacing is required to remove whitespace caused by display: inline block on children.
+// Example Use - Used throughout all pages to house grid items.
+//
+// 1. Combats display: inline-block spacing issue with children.
+// 2. Protect against WebKit bug with optimizelegibility.
+// 3. Adjust to accomodate for child elements.
+//
+
+.grid {
+  @extend %u-clearfix;
+  letter-spacing: -0.36em;                                       // 1
+  list-style: none;
+  text-rendering: optimizespeed;                                 // 2
+  margin-left: -(calc-em($base-spacing-unit, $base-font-size));  // 3
+}
+
+// =============================
+// Origin Grid Item Element Styling
+// =============================
+
+//
+// Origin Grid Item Element creates a building block to house layout elements.
+// Example Use - Any element within the page layout will contain this class.
+//
+// 1. Letter spacing set to normal, to override cascade from .grid container, and all text values reverted back to defaults.
+// 2. Cause columns to stack side-by-side.
+// 3. Align columns to the tops of each other.
+// 4. Space columns apart.
+// 5. Full-width unless told to behave otherwise.
+// 6. Add box-sizing to grid items if global variable returns false.
+//
+
+  .grid__item {
+    letter-spacing: normal;                                      // 1
+    text-rendering: auto;                                        // 1
+    word-spacing: normal;                                        // 1
+    display: inline-block;                                       // 2
+    vertical-align: top;                                         // 3
+    padding-left: calc-em($base-spacing-unit, $base-font-size);  // 4
+    width: 100%;                                                 // 5
+
+    @if $global-box-sizing == false {
+      box-sizing: border-box;                                  // 5
+    }
+
+  }

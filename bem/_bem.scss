@@ -1,0 +1,45 @@
+// =============================
+// Example BEM Component
+// =============================
+
+//
+// A Description Of The Component - Mandatory
+// Note  - Any Relevant Notes
+// @TODO - Any TODO's
+// Example Use - Highlight A Location In The UI Where The Component Is Visible.
+//
+
+.button,
+%button {
+  // Base Styling Which All Modifiers Extend Upon.
+
+  // .button--alpha
+
+  //
+  // A Description Of The Component - Mandatory
+  // Note  - Any Relevant Notes
+  // @TODO - Any TODO's
+  // Example Use - Highlight A Location In The UI Where The Component Is Visible.
+  //
+
+  // Modifier of the .button component. Extends upon the base component.
+  &--alpha {
+    @extend %button !optional;
+
+    // .button--alpha__content
+    
+    &__content {
+
+    }
+
+  }
+
+  // .button__content
+
+  // Element of .button base component.
+
+  &__content {
+
+  }
+
+}

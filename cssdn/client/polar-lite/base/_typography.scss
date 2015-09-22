@@ -1,0 +1,9 @@
+// =============================
+// Edge/Polar-Lite Base Text Lead Styling
+// =============================
+
+// Text Lead is used to make the introductory text of a document slightly larger.
+
+.text-lead {
+  @include rem-sizing(22);
+}

@@ -1,0 +1,33 @@
+// =============================
+// Origin REM Sizing Utility Mixin
+// =============================
+
+///
+/// Calculate the REM unit, and return both REMs and pixels to support older browsers.
+///
+/// @group origin
+/// @name rem-sizing
+///
+/// @param {string} $property ['font-size']       - A value which contains the property which you want to set a REM unit value for.
+/// @param {number} $values                       - The value (in pixels) of the element property you are setting the REM value for.
+/// @param {number} $context ['$base-font-size']  - The font-size of the root element. $base-font-size is default due to the root being the <html> element.
+///
+/// @example scss - Example of setting a font-size in REM's
+///    @extend rem-sizing(32);
+///
+/// @example scss - Example Using multiple values in the $values parameter.
+///    @extend rem-sizing(20 20, "padding");
+///
+
+@mixin rem-sizing($values, $property: 'font-size', $context: $base-font-size) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+    $px : append($px , $value);
+    $rem: append($rem, $value);
+  }
+
+  #{$property}: to-pixel($px);
+  #{$property}: calc-rem($rem);
+}

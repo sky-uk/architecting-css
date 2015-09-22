@@ -1,0 +1,42 @@
+// =============================
+// Client/Polar-Lite Global Default Variables
+// =============================
+
+//
+// Global Spacing Values List contains all multiples of the base-spacing-unit value you would like to generate
+// within both your padding and margin utility partials.
+// Note - Fractions will divide the base-spacing value, and values which are proceeded by an "x"
+// multiply the base-spacing value. 0 will create instances which remove spacing.
+//
+
+$global-spacing-values: ("1/2", "1x", "2x", "3x", "0") !default;
+
+//
+// Global Spacing Directions Map contains all the spacing variations which are to be generated
+// when calling the generate-spacing mixin.
+// Example - t: (top) property called with Margin, would result in mar-t-* classes being generated.
+//
+// Value Key:
+// -t- = Top
+// -b- = Bottom
+// -l- = Left
+// -r- = Right
+// -e- = Ends  (Top & Bottom)
+// -s- = Sides (Left & Right)
+//
+
+$global-spacing-directions: (
+    t:  (top),
+    b:  (bottom),
+    l:  (left),
+    r:  (right),
+    e:  (top, bottom),
+    s:  (left, right)
+) !default;
+
+// =============================
+// Client/Polar-Lite Aesthetic Default Variables
+// =============================
+
+$keyline-grey: #dcdcdc;
+$keyline-grey-dark: #888888;

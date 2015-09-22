@@ -1,0 +1,43 @@
+// =============================
+// Origin Global Default Variables
+// =============================
+
+//
+// Set Global Box Sizing Variable to true by default, so it takes effect on all elements.
+// Note - Changing this value to false will result in only adding box-sizing to grid-item elements.
+//
+
+$global-box-sizing: true !default;
+
+// =============================
+// Origin Textual Default Variables
+// =============================
+
+//
+// Font Size is defaulted for the purposes of providing a default value
+// for various mixins and functions.
+//
+
+$base-font-size: 16 !default;
+
+// =============================
+// Origin Viewport Default Variables
+// =============================
+
+//
+// Viewport Values Map contains breakpoint values/sub-values which are used throughout applications,
+// within mixins, functions and for looping directives to namespace certain elements.
+//
+// Example - The $breakpoint parameter within the media-query mixin, uses the first element in each list.
+// Parameter Description:
+//
+// List[1] - The viewport minimum width.
+// List[2] - The viewport maximum width.
+// List[3] - The number of columns in the grid for that defined viewport.
+//
+
+$viewport-values: (
+	"@desk": (1025, 3000, 12),
+	"@lap" : (641,  1024, 8),
+	"@palm": (320,  640,  4)
+) !default;

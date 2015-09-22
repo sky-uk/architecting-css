@@ -1,0 +1,59 @@
+// =============================
+// Button Component Styling
+// =============================
+
+//
+// The Button Component provides no styling which is reusable to all modifiers currently at this level.
+// Note - It is recommended you don't use this component direct and just extend upon.
+//
+
+.button,
+%button {
+
+  //
+  // The Button Component Stacked Modifier provides structural styling which displays a button component
+  // at block level.
+  //
+  // Note - It is recommended you use this modifier alongside a more
+  // aesthetically pleasing modifier.
+  //
+
+  // .button--stacked
+
+  &--alpha {
+    @extend %button !optional;
+    @extend %u-text-center;
+    display: block;
+    width: 100%;
+  }
+
+  //
+  // The Button Component Inline Modifier provides structural styling which displays a button component
+  // at inline level.
+  //
+  // Note - It is recommended you use this modifier alongside a more
+  // aesthetically pleasing modifier.
+  //
+
+  // .button--inline
+
+  &--ghost {
+    @extend %button !optional;
+    display: inline-block;
+  }
+
+  //
+  // The Button Component Bordered Modifier provides a minimally styled button with
+  // a slight border around the element using the brands main blue color.
+  //
+
+  // .button--bordered
+
+  &--cta {
+    @extend %button !optional;
+    border: 1px solid $color-brand-alpha;
+    color: $color-brand-alpha;
+    border-radius: 5px;
+  }
+
+}

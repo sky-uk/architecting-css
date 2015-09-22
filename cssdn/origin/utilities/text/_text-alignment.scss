@@ -1,0 +1,43 @@
+// =============================
+// Origin Text Alignment Utility Helper Classes
+// =============================
+
+// Un-namespaced Classes are to be used globally when an elements alignment is consistant across all viewports.
+
+.u-text-left,
+%u-text-left   {
+	text-align: left   !important
+}
+.u-text-right,
+%u-text-right  {
+	text-align: right  !important
+}
+.u-text-center,
+%u-text-center {
+ text-align: center !important
+}
+
+// =============================
+// Origin Viewport Text Alignment Utility Helper Attributes
+// =============================
+
+//
+// Viewport Text Alignment Utility Helper Attributes are generated via the below function for certain viewports.
+// The advantage to this, is it allows alignment to be added to a certain element specifically for a breakpoint which you have
+// defined.
+// Example Use - class="u-text-center u-text-left@center".
+//
+
+@each $viewport, $breakpoint in $viewport-values {
+
+  // Attributes only apply once certain breakpoint is triggered.
+
+  @include media-query($from: nth($breakpoint, 1),
+                       $to:   nth($breakpoint, 2)) {
+
+   [class~="u-text-left#{$viewport}"]   { text-align: left   !important }
+   [class~="u-text-right#{$viewport}"]  { text-align: right  !important }
+   [class~="u-text-center#{$viewport}"] { text-align: center !important }
+
+ }
+}

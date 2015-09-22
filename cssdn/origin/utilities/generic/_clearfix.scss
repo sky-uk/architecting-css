@@ -1,0 +1,18 @@
+// =============================
+// Clearfix Utility Helper Class
+// =============================
+
+.u-clearfix,
+%u-clearfix {
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}

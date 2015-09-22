@@ -1,0 +1,39 @@
+// =============================
+// Client/Polar-Lite Button Component Styling
+// =============================
+
+//
+// The Button Component provides no styling which is reusable to all modifiers currently at this level.
+// Note - It is recommended you don't use this component direct and just extend upon.
+//
+
+.button,
+%button {
+
+  // .button--stacked
+
+  //
+  // The Button Component Stacked Modifier provides structural styling which displays a button component
+  // at block level.
+  //
+
+  &--stacked {
+    @extend %button !optional;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  // .button--inline
+
+  //
+  // The Button Component Inline Modifier provides structural styling which displays a button component
+  // at inline level.
+  //
+
+  &--inline {
+    @extend %button !optional;
+    display: inline-block;
+  }
+
+}

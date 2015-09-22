@@ -1,0 +1,28 @@
+// =============================
+// Origin To Pixel Conversion Function
+// =============================
+
+///
+/// Convert number/s into pixel based value/s.
+///
+/// @group origin
+/// @name to-pixel
+///
+/// @param {number} $values [false] - The value/s of what you would like to be converted to pixel based values.
+///
+/// @example scss - Example using a single value
+///    to-pixel(16);
+///
+/// @example scss - Example using a single value
+///    to-pixel(16, 16);
+///
+
+@function to-pixel($values) {
+  $px: ();
+
+  @each $value in $values {
+    $px: append($px, $value + px);
+  }
+
+  @return $px;
+}

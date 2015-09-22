@@ -1,0 +1,58 @@
+// =============================
+// Media Query Utility Mixin
+// =============================
+
+///
+/// Generates utility classes for percentage based properties.
+///
+/// @name media-query
+///
+/// @param {number} $from [false] - A value which relates to the min-width you would like the query to cover.
+/// @param {number} $to [false]   - A value which relates to the max-width you would like the query to cover.
+/// @param {string} $and [false]  - A value containing additional conditions which may be required for the query.
+///
+/// @example scss - Example Using the $viewport-map '@lap' key values.
+///    @extend media-query($from: nth(map-get($viewport-values, '@lap'), 1),
+///                        $to:   nth(map-get($viewport-values, '@lap'), 2)) {
+///       .box {
+///          color: red;
+///       }
+///    }
+///
+/// @example scss - Example using integers and additional conditions via $and
+///    @include media-query($from: 480,
+///                        $to:   640,
+///                        $and:  '(orientation: landscape)') {
+///       .box {
+///          color: red;
+///       }
+///    }
+///
+
+@mixin media-query($from: false, $to: false, $and: false) {
+  $_from  : 0;
+  $_to    : 0;
+  $_and   : $and or null;
+  $_query : null;
+
+  @if($from) {
+    $_from: calc-em($from);
+  }
+
+  @if($to) {
+    $_to: calc-em($to);
+  }
+
+  @if($_from or $_to or $_and) {
+    @if ($_from != 0) { $_query: '#{$_query} and (min-width: #{$_from})'; }
+    @if ($_to != 0)   { $_query: '#{$_query} and (max-width: #{$_to})';   }
+    @if ($_and)       { $_query: '#{$_query} and #{$_and}';               }
+  }
+
+  $_query: unquote(#{$_query});
+
+  @media all #{$_query} {
+    @content;
+  }
+
+}
