@@ -6,4 +6,4 @@ This repo contains all the examples which was used alongside the presentation wh
 
 You can find the slides below
 
-[Download Slides](#)
+[Download Slides](https://speakerdeck.com/17bc17/internal-css-talk)
