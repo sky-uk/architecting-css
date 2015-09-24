@@ -1,0 +1,23 @@
+// =============================
+// Custom Font Utility Mixin
+// =============================
+
+///
+/// Returns A Custom Font Family With The Required Weight Of The Family.
+///
+/// @name custom-font
+///
+/// @param {string} $family ['sans-serif'] - A string value of the family you want to be added.
+/// @param {number} $weight ['400']        - A number value of the weight you want to be added.
+///
+/// @example scss - Example of setting the font with the default values.
+///    @extend custom-font();
+///
+/// @example scss - Example using custom values.
+///    @extend custom-font('helvetica-neue, sans-serif', '700');
+///
+
+@mixin custom-font($family: 'sans-serif', $weight: 400) {
+  font-family: $family;
+  font-weight: $weight;
+}

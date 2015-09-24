@@ -1,0 +1,16 @@
+.button {
+  @include custom-font($weight: 700);
+  background-color: #FFF;
+  margin-bottom: $base-spacing-unit;
+}
+
+.heading {
+  @include custom-font($weight: 700);
+  margin-bottom: $base-spacing-unit;
+}
+
+.text-lead {
+  @include custom-font($weight: 700);
+  font-size: 1rem;
+  margin-bottom: $base-spacing-unit / 2;
+}

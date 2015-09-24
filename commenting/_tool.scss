@@ -21,8 +21,8 @@
 ///
 /// @example scss - Example using integers and additional conditions via $and
 ///    @include media-query($from: 480,
-///                        $to:   640,
-///                        $and:  '(orientation: landscape)') {
+///                         $to:   640,
+///                         $and:  '(orientation: landscape)') {
 ///       .box {
 ///          color: red;
 ///       }

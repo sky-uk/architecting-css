@@ -9,51 +9,37 @@
 
 .button,
 %button {
+  text-decoration: none;
 
   //
-  // The Button Component Stacked Modifier provides structural styling which displays a button component
-  // at block level.
+  // The Button Brand Alpha Modifier provides uses the main button element styling provided in the brands
+  // styleguide.
   //
-  // Note - It is recommended you use this modifier alongside a more
-  // aesthetically pleasing modifier.
+  // Example Use - Homepage Hero Element.
   //
 
-  // .button--stacked
+  // .button--brand-alpha
 
-  &--alpha {
+  &--brand-alpha {
     @extend %button !optional;
-    @extend %u-text-center;
-    display: block;
-    width: 100%;
+    background: blue;
+    color: white;
+    border-radius: 10px;
   }
 
-  //
-  // The Button Component Inline Modifier provides structural styling which displays a button component
-  // at inline level.
-  //
-  // Note - It is recommended you use this modifier alongside a more
-  // aesthetically pleasing modifier.
-  //
+  // .button--pill
 
-  // .button--inline
-
-  &--ghost {
+  &--pill {
     @extend %button !optional;
-    display: inline-block;
+    border-radius: 50%;
   }
 
-  //
-  // The Button Component Bordered Modifier provides a minimally styled button with
-  // a slight border around the element using the brands main blue color.
-  //
+  // .button--disabled
 
-  // .button--bordered
-
-  &--cta {
-    @extend %button !optional;
-    border: 1px solid $color-brand-alpha;
-    color: $color-brand-alpha;
-    border-radius: 5px;
+  &--disabled,
+  &[aria-disabled="true"] {
+    opacity: .5;
+    cursor: not-allowed;
   }
 
 }

@@ -1,9 +1,9 @@
 // =============================
-// Origin Grid Element Styling
+// Grid Element Styling
 // =============================
 
 //
-// Origin Grid Element creates an instance of a grid element which can store grid items within.
+// Grid Element creates an instance of a grid element which can store grid items within.
 // Note - When using a grid element, please put child content within grid item elements to resolve letter-spacing issue,
 // letter spacing is required to remove whitespace caused by display: inline block on children.
 // Example Use - Used throughout all pages to house grid items.
@@ -22,11 +22,11 @@
 }
 
 // =============================
-// Origin Grid Item Element Styling
+// Grid Item Element Styling
 // =============================
 
 //
-// Origin Grid Item Element creates a building block to house layout elements.
+// Grid Item Element creates a building block to house layout elements.
 // Example Use - Any element within the page layout will contain this class.
 //
 // 1. Letter spacing set to normal, to override cascade from .grid container, and all text values reverted back to defaults.
