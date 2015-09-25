@@ -37,7 +37,16 @@ As requested by Tom and some of the SE's, please find a reading list along with 
 - [Play Nice With CSS Tools and Methodologies](https://www.youtube.com/watch?v=-bZSTMLqf8Q&list=PLUS3uVC08ZaqVEGFkl_dS_3FUzILkOIzA)
 - [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 - [BEM](https://en.bem.info/)
-
+- [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/)
+- [SOLID CSS](http://blog.millermedeiros.com/solid-css/)
+- [MindBEMding - getting your head around BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+- [Shoot to kill: CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
+- [Keep your CSS selectors short](http://csswizardry.com/2012/05/keep-your-css-selectors-short/)
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+- [Object-Oriented CSS](https://www.youtube.com/watch?v=BjAdHyA9nIY)
+- [BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
+- [About HTML semantics and frontend architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
 
 #### Workflow
 
@@ -51,6 +60,7 @@ As requested by Tom and some of the SE's, please find a reading list along with 
 - [Bugsnag's CSS Architecture](https://bugsnag.com/blog/bugsnags-css-architecture)
 - [How we do CSS at Ghost](http://dev.ghost.org/css-at-ghost/)
 - [Medium’s CSS is actually pretty f***ing good.](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)
+- [CSS at Lonely Planet](http://ianfeather.co.uk/css-at-lonely-planet/)
 
 #### Community
 
@@ -82,7 +92,7 @@ As requested by Tom and some of the SE's, please find a reading list along with 
 #### Frameworks, Toolkits & Methadologies
 
 - [ITCSS](http://itcss.io/)
-- [Point North](http://pointnorth.io/#base-browser-styling
+- [Point North](http://pointnorth.io/#base-browser-styling)
 - [idiomatic-css](https://github.com/necolas/idiomatic-css)
 - [SUIT CSS](https://github.com/suitcss)
 - [idiomatic CSS](https://github.com/necolas/idiomatic-css) by [Nicolas Gallagher](https://twitter.com/necolas).
@@ -92,3 +102,8 @@ As requested by Tom and some of the SE's, please find a reading list along with 
 - [ThinkUp CSS Style Guide](https://github.com/ThinkUpLLC/ThinkUp/wiki/Code-Style-Guide:-CSS)
 - [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [WordPress CSS Coding Standards](https://make.wordpress.org/core/handbook/coding-standards/css/)
+- [PostCSS](https://github.com/postcss/postcss)
+- [Inuit](https://github.com/inuitcss)
+- [ViaductCSS](https://github.com/ViaductCSS/Viaduct)
+- [Origin](https://github.com/origin-css-framework)
+- [BassCSS](http://www.basscss.com/)
